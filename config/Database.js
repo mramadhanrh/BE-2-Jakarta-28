@@ -13,6 +13,7 @@ dotenv.config();
 // Initialisasi mysql railway
 const db = new Sequelize(process.env.MYSQLDATABASE, process.env.MYSQLUSER, process.envMYSQLPASSWORD, {
     host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
     dialect: "mysql"
 });
 
