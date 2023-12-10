@@ -1,4 +1,7 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Initialisasi database baru dengan nama code_blog dan usernya root tanpa ada password
 // const db = new Sequelize(`code_blog`, 'root', '', {
@@ -8,8 +11,8 @@ import { Sequelize } from "sequelize";
 
 
 // Initialisasi mysql railway
-const db = new Sequelize("railway", "root", "adHhDbEaB3he22gGdh1cHadG5h45-b3E", {
-    host: "monorail.proxy.rlwy.net",
+const db = new Sequelize(process.env.MYSQLDATABASE, process.env.MYSQLUSER, process.envMYSQLPASSWORD, {
+    host: process.env.MYSQLHOST,
     dialect: "mysql"
 });
 
